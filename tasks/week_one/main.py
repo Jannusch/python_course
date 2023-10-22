@@ -67,7 +67,44 @@ def birthday():
     # This line is for the test. I will explain later what it does.
     return combinations, different_birthdays, probability, probability_complement
 
+def advanced_arithmetic():
+    # This task should prepare you for the next weeks.
+    # The first task is to calculate the euclidean distance between two points.
+    # The points are (2, 4) and (5, 8).
+    # The result should be stored in the variable 'distance'.
+    distance = None
+
+    # The second step is the distance between two points in 3D.
+    # The points are (2, 4, 6) and (5, 8, 10).
+    distance_3d = None
+
+    # The third step is the distance in a 8-dimensional space. (Don't worry, you don't have to imagine it.)
+    # The points are (2, 4, 6, 8, 10, 12, 14, 16) and (5, 8, 10, 12, 14, 16, 18, 20).
+
+    distance_8d = None
+
+    # Now we calculate the distance again in 8D but with the second point being (5, 8, 10, 12, 14, 16, 18, 200).
+    distance_8d_2 = None
+
+    # Maybe you noticed something strange about the last two results.
+    #
+    #
+
+    # *Spoiler*
+    # What you discovered is called the curse of dimensionality.
+    # Only the change of one dimension leads to a huge change in the distance.
+    # This is a problem for machine learning algorithms.
+    # Therefore different distance measures are used.
+    # One of them is the cosine similarity.
+    # Try to implement it. And maybe you can read something about the curse of dimensionality, it is very interesting.
+
+    distance_cosine = None
+
+    # This line is for the test. I will explain later what it does.
+    return distance, distance_3d, distance_8d, distance_8d_2, distance_cosine
+
 if __name__ == '__main__':
     simple_arithmetic()
     simple_volume()
     birthday()
+    advanced_arithmetic()
