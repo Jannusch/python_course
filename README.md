@@ -1,0 +1,2 @@
+# Python course winter semester 23/24
+This repository contains the material and the tasks for the python programming course in the winter semester 2023/24. The repository will be updated during the semester.
