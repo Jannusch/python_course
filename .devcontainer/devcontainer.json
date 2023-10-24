@@ -1,0 +1,56 @@
+//
+{
+	// name of the container
+	"name": "Python programming course",
+
+	// build from Dockerfile
+	"build": {
+		"dockerfile": "Dockerfile"
+	}
+	,
+
+	// Disable remote user id mapping because it crashes in the APB PC-Pools. Probably due to the rootless installation of Docker.
+	"updateRemoteUserUID": false,
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": []
+	,
+
+	// allow debugger to attach to running processes (part 1)
+	"capAdd": [
+		"SYS_PTRACE"
+	]
+	,
+
+	// allow debugger to attach to running processes (part 1)
+	"securityOpt": [
+		"seccomp=unconfined"
+	]
+	,
+
+	// vscode extensions and settings
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python"
+				,
+				"ms-python.vscode-pylance"
+				,
+				"tomoki1207.pdf"
+			]
+			,
+			"settings": {
+				// use zsh as default shell (part 1)
+				"terminal.integrated.profiles.linux": {
+					"zsh": {
+						"path": "zsh"
+					}
+				}
+				,
+				// use zsh as default shell (part 2)
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	}
+}
+
