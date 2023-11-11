@@ -1,0 +1,237 @@
+\documentclass{beamer}
+\usetheme{metropolis}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{Functions \& Libraries}
+\author{Jannusch Bigge}
+\date{14.11.2023}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Functions}
+
+\begin{frame}{Memory}
+    Different types of memory:
+   \begin{description}
+        \item<1->[HDD/SSD] Hard Disk Drive / Solid State Drive  
+        \item<2->[RAM] Random Access Memory
+        \item<3->[Cache] Small and fast memory
+   \end{description}
+\end{frame}
+
+% \begin{frame}{Memory}
+%     Different layout of memory for tasks:
+%    \begin{description}
+%         \item<1->[Heap] Memory for dynamic allocation k
+%         \item<2->[Stack] Memory for function calls
+%    \end{description}
+%    \begin{alertblock}<3->{Not important in Python - the VM does all the work}
+%    \end{alertblock}
+
+% \end{frame}
+
+% difference between == and equals() in python
+\begin{frame}{Memory - Reference and copy}
+
+    \textbf{Python} \hfill \textbf{presudo memory}
+   
+    \begin{columns}
+        \begin{column}{0.49\textwidth}
+            \begin{itemize}
+                \item<1-> Reference: \textit{b = a}
+                \item<3-> Copy: \textit{a = b.copy()}
+            \end{itemize}
+        \end{column}
+        \begin{column}{.02\textwidth}
+            \rule{.1mm}{0.7\textheight}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \begin{description}
+                \item<2->[a (00)] 00 03
+                \item<2->[b (01)] 00 (address of a)
+                \item<4->[--]
+                \item<4->[a (00)] 00 03
+                \item<4->[b (01)] 00 03    
+            \end{description}
+        \end{column}
+
+    \end{columns}
+
+    
+\end{frame}
+
+% Scope
+\begin{frame}{Scopes and Namespaces}
+
+    \begin{alertblock}<1->{Using every name only ones could lead to problems.}
+    \end{alertblock} \pause
+    \textbf{Solution:}
+
+    \begin{itemize}
+        \item<3-> Namespaces
+        \item<4-> Scopes 
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Namespaces}
+    Mapping from names to objects:\pause
+    \begin{itemize}
+        \item<2-> Built-in
+        \item<3-> Global
+        \item<4-> Enclosing
+        \item<4-> Local
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Scope - Single definition}
+    \begin{lstlisting}[language=Python]
+    >>> x = 'global'
+    >>> def foo():
+    ...
+    ...     def bar():
+    ...         print(x)
+    ...        
+    ...     bar()
+    >>> foo() 
+    global
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Scope - Double definition}
+    \begin{lstlisting}[language=Python]
+    >>> x = 'global'
+    >>> def foo():
+    ...     x = 'enclosing'
+    ...     def bar():
+    ...         print(x)
+    ...        
+    ...     bar()
+    >>> foo() 
+    enclosing
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Scope - Triple definition}
+    \begin{lstlisting}[language=Python]
+    >>> x = 'global'
+    >>> def foo():
+    ...     x = 'enclosing'
+    ...     def bar():
+    ...         x = 'local'
+    ...         print(x)
+    ...        
+    ...     bar()
+    >>> foo() 
+    local
+    \end{lstlisting}
+\end{frame}
+
+\section{Control structures}
+
+\begin{frame}[fragile]{Control structures}
+    Only sequential execution is nice but sometimes we need more:
+    \begin{columns}
+        \begin{column}{0.49\textwidth}
+            \textbf{6th fibonacci number:}
+            \begin{lstlisting}[language=Python]
+first = 0
+second = 1
+third = 1
+fourth = 2
+fifth = 3
+sixth = 5
+            \end{lstlisting}
+            \onslide<2->\textbf{Problem:} What if we want the 100th fibonacci number?
+        \end{column}
+        \begin{column}{.02\textwidth}
+            \rule{.1mm}{0.7\textheight}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \onslide<3->\textbf{Solution:} Control structures
+            \begin{lstlisting}[language=Python]
+a = 0
+b = 1
+c = 1
+for i in range(100):
+    a = b
+    b = c
+    c = a + b
+            \end{lstlisting}
+    
+        \end{column}
+
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}[fragile]{for loop}
+    Repeat something a given number of times.
+    \begin{itemize}
+        \item \textbf{for} \textit{variable} \textbf{in} \textit{iterable}:
+        \item \textbf{for} \textit{variable} \textbf{in} \textit{range(start, stop, step)}:
+    \end{itemize}\pause
+    \textbf{Example:}
+    \begin{lstlisting}[language=Python]
+        a = 2
+        for i in range(3):
+            print(a + i)
+    >>> 2
+    >>> 3
+    >>> 4
+    \end{lstlisting}
+    
+\end{frame}
+
+\begin{frame}[fragile]{if statement}
+    Do something only if condition is true.
+    \begin{itemize}
+        \item \textbf{if} \textit{condition}:
+    \end{itemize}\pause
+    Types of conditions:
+    \begin{itemize}
+        \item \textbf{True} or \textbf{False}
+        \item \textbf{==} or \textbf{!=}
+        \item \textbf{and} or \textbf{or}
+    \end{itemize}\pause
+    \textbf{Example:}
+    \begin{lstlisting}[language=Python]
+    a = 2                  a = 2
+    if a == 2:             if a == 2 and a != 3:
+        print(a)               print('Not 3')
+>>> 2                       >>> 'Not 3'
+    \end{lstlisting}
+    
+\end{frame}
+
+\section{Task}
+
+\begin{frame}
+    First Task:
+    \begin{itemize}
+        \item Just try the fibonacci number sequence for different numbers.
+    \end{itemize}
+    Second Task:
+    \begin{enumerate}
+        \item Calculate a baseline
+        \begin{enumerate}
+            \item Calculate the mean of each cluster
+            \item Calculate the mean of all points
+            \item Sort the unclassified points into the two clusters
+        \end{enumerate}
+        \item Clustering with Gram-Schmidt (Bonus Task)
+        \begin{enumerate}
+            \item Find the perpendicular vector to the line between (-2, 6) and (6, -2)
+            \item Find the threshold \textbf{t} for $w^Tx<t$ when x is in class one. Note: $w^Tx = w \cdot x$
+        \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\section{Next week: Using functions and libraries}
+
+\end{document}
