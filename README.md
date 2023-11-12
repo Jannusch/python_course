@@ -9,3 +9,12 @@ You can clone this repository to your local machine using the following command:
 git clone https://github.com/Jannusch/python_course.git
 code python_course
 ```
+You can use your own python installation. Everything should work if your setup is correct.
+As an alternative this repository contains a devcontainer definition. 
+If you use the devcontainer everything is setup for you.
+
+**Important**:
+Due to the setup of the PC pool in the university this course is held, the container has root privileges on the machine it is executed. You can quite easily cause big trouble on your system!
+
+**Easy way**:
+You can use this repository with a codespace from github. If you have a pro account (if you are a student you should have one) you can start the codespace based on the devcontainer and the respository. The option is in the same menu as the clone of the respository (green button on the left).
