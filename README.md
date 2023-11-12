@@ -17,4 +17,4 @@ If you use the devcontainer everything is setup for you.
 Due to the setup of the PC pool in the university this course is held, the container has root privileges on the machine it is executed. You can quite easily cause big trouble on your system!
 
 **Easy way**:
-You can use this repository with a codespace from github. If you have a pro account (if you are a student you should have one) you can start the codespace based on the devcontainer and the respository. The option is in the same menu as the clone of the respository (green button on the left).
+You can use this repository with a codespace from github. If you have a pro account (if you are a student you should have one) you can start the codespace based on the devcontainer and the repository. The option is in the same menu as the clone of the repository (green button on the left).
