@@ -102,7 +102,7 @@ ax.plot([1, 2, 3, 4], [0, 0.5, 1, 0.2])
 \begin{frame}{Matplotlib - Example}
     \begin{figure}
         \centering
-        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/five/figures/example_1.pdf}
+        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/week_five/figures/example_1.pdf}
     \end{figure}
 \end{frame}
 
@@ -120,7 +120,7 @@ ax.set_ylabel('y label')
 \begin{frame}{Matplotlib - Example}
     \begin{figure}
         \centering
-        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/five/figures/example_2.pdf}
+        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/week_five/figures/example_2.pdf}
     \end{figure}
 \end{frame}
 
@@ -132,7 +132,7 @@ ax.set_ylabel('y label')
 ax.plot([1, 2, 3, 4], [1, 3, 1, 4], 'r--')
 ax.legend(['A simple line', 'Another line'])
 # And save the figure
-fig.savefig("/workspaces/python_course/slides/five/figures/myplot.pdf")
+fig.savefig("/workspaces/python_course/slides/week_five/figures/myplot.pdf")
     \end{lstlisting}
 
 \end{frame}
@@ -140,7 +140,7 @@ fig.savefig("/workspaces/python_course/slides/five/figures/myplot.pdf")
 \begin{frame}{Matplotlib - Example}
     \begin{figure}
         \centering
-        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/five/figures/myplot.pdf}
+        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/week_five/figures/myplot.pdf}
     \end{figure}
 \end{frame}
 
@@ -165,14 +165,14 @@ fig.savefig("/workspaces/python_course/slides/five/figures/myplot.pdf")
 \begin{frame}{Debugging - HowTo}
     \begin{figure}
         \centering
-        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/five/figures/Screenshot 2023-11-27 163952.png}
+        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/week_five/figures/Screenshot 2023-11-27 163952.png}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Debugging - HowTo}
     \begin{figure}
         \centering
-        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/five/figures/Screenshot 2023-11-27 165218.png}
+        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/week_five/figures/Screenshot 2023-11-27 165218.png}
     \end{figure}
 \end{frame}
 
@@ -182,9 +182,45 @@ fig.savefig("/workspaces/python_course/slides/five/figures/myplot.pdf")
 \section{Task}
 
 \begin{frame}{Task}
+    \begin{itemize}
+        \item  Advent of Code again (now with debugger)
+        \item  Try to plot some of the data
+    \end{itemize}
     
 \end{frame}
 
+\begin{frame}[fragile]{Task - Matplotlib}
+    \textbf{1. Rebuilt the container}\\
+    \textbf{2. Create the environment}
+    \begin{lstlisting}[language=bash, backgroundcolor = \color{lightgray}, columns=fullflexible,
+        breaklines=true]
+    $ cd /workspaces/python_course/tasks/week_five
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    \end{lstlisting}
+    \textbf{3. Install the requirements}
+    \begin{lstlisting}[language=bash, backgroundcolor = \color{lightgray}, columns=fullflexible,
+        breaklines=true]
+    $ pip install matplotlib
+    \end{lstlisting}
+    \textbf{4. Set the interpreter in VSCode}
+
+\end{frame}
+
+\begin{frame}{Task - Rebuilt the container}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/week_five/figures/Screenshot 2023-11-27 180245.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Task - Set the interpreter}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth]{/workspaces/python_course/slides/week_five/figures/Screenshot 2023-11-27 180627.png}
+    \end{figure}
+    Maybe you have to navigate no the path (venv/bin/python). Best case VSCode finds it automatically.
+\end{frame}
 
 \end{document}
 
