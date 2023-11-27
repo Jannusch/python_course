@@ -6,4 +6,5 @@ RUN \
     zsh \
     git \
     python3 \
+    python3-venv \
     ;
