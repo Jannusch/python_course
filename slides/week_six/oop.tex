@@ -192,9 +192,50 @@ car2 = SportCar("blue", True)
         \item Magic methods are special methods that are called by special syntax
         \item They are used to implement operator overloading
         \item They are defined with two underscores before and after the name
-        \item They are called by the interpreter
+        \item Normally they are called by the interpreter and only implicitly by the user
+    \end{itemize}
+    We already used the \texttt{\_\_init\_\_} method.
+
+\end{frame}
+
+\begin{frame}[fragile]{Magic Methods}
+    \begin{lstlisting}[language=Python]
+        def __gt__(self, other):
+            return self.hp > other.hp
+    \end{lstlisting}
+        
+    \end{frame}
+
+
+\section{List Comprehension}
+
+\begin{frame}{List Comprehensions}
+    \begin{itemize}
+        \item List comprehensions are a way to create lists
+        \item They are more compact than for loops
+        \item They are faster than for loops
+        \item They are more readable than for loops (sometimes)
     \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]{List Comprehensions}
+
+    newlist = [expression \textbf{for} item \textbf{in} iterable \textbf{if} condition == True]
+    \begin{lstlisting}[language=Python]
+    # Create a list with the numbers from 0 to 9
+    #old way
+    numbers = []
+    for i in range(10):
+        numbers.append(i)#
+
+    # with list comprehensions
+    numbers = [i for i in range(10)]
+    odd = [i for i in range(10) if i % 2 == 1]
+    \end{lstlisting}
+\end{frame}
+
+\section{Task}
+
 
 \end{document}
 
