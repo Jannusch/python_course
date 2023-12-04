@@ -1,0 +1,16 @@
+\frametitle{Task - Matplotlib}
+\textbf{1. Rebuilt the container}\\
+    \textbf{2. Create the environment}
+    \begin{lstlisting}[language=bash, backgroundcolor = \color{lightgray}, columns=fullflexible,
+        breaklines=true]
+    $ cd /workspaces/python_course/tasks/week_five
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    \end{lstlisting}
+    \textbf{3. Install the requirements}
+    \begin{lstlisting}[language=bash, backgroundcolor = \color{lightgray}, columns=fullflexible,
+        breaklines=true]
+    $ pip install matplotlib
+    \end{lstlisting}
+    \textbf{4. Set the interpreter in VSCode}
+

@@ -1,0 +1,18 @@
+\frametitle{Example - OOP}
+\begin{lstlisting}[language=Python]
+class Car:
+    def __init__(self, color: str) -> None:
+        print("Created a new car")
+        self.color = color
+
+    def get_color(self) -> str:
+        return self.color
+
+class SportCar(Car):
+    def __init__(self, color: str, license: bool):
+        super().__init__(color)
+        self.license = license
+
+car1 = Car("black")
+car2 = SportCar("blue", True)
+    \end{lstlisting}

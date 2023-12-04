@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Objetc Oriented Programming}{2}{0}{1}
+\beamer@sectionintoc {2}{Magic Methods}{25}{0}{2}
