@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Matplotlib}{2}{0}{1}
+\beamer@sectionintoc {2}{Debugging}{28}{0}{2}
+\beamer@sectionintoc {3}{Debugging - Example}{35}{0}{3}
+\beamer@sectionintoc {4}{Task}{36}{0}{4}
