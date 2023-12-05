@@ -1,0 +1,216 @@
+\documentclass{beamer}
+\usetheme{metropolis}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{Functions \& Libraries}
+\author{Jannusch Bigge}
+\date{14.11.2023}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Functions}
+
+\begin{frame}{Functions}
+    Often we want to do the same thing multiple times.\\ \pause 
+    But we don't want to write the same code multiple times. \pause
+    \begin{alertblock}{Solution: Functions}
+        \begin{itemize}
+            \item<3-> Reusable code
+            \item<4-> Easier to read
+            \item<5-> Easier to debug
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{Functions - Definition in Python}
+    Definition:
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+    def function_name(arguments):
+        # do something
+        return something
+    \end{lstlisting}
+    \begin{itemize}
+        \item<2-> \textbf{def} \textit{name}(\textit{arguments}): - Start of the function
+        \item<3-> \textbf{return} \textit{something} - End of the function
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Functions - Calling}
+    Define:
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        def fibbonacci(number):
+            a = 0
+            ...
+                b = a + b
+            return a 
+    \end{lstlisting}
+    Calling the function:
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        >>> result = fibbonacci(6)
+        >>> print(result)
+        8
+    \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}{Some examples}
+    You allready know some functions:
+    \begin{itemize}
+        \item<1-> \textbf{print}(\textit{something})
+        \item<2-> \textbf{len}(\textit{something})
+        \item<3-> \textbf{range}(\textit{something})
+        \item<4-> \textbf{input}(\textit{something})
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Return values}
+    You can return none, one or multiple values.\pause
+    \begin{itemize}
+        \item<2-> \textbf{None} - Nothing
+        \item<3-> \textbf{return a} - One value
+        \item<4-> \textbf{return a, b, c} - Multiple values
+    \end{itemize}\pause
+    How to access multiple return values?
+
+\end{frame}
+
+\begin{frame}{Tuples}
+    Special data type in Python: \textbf{Tuple}\\ \pause
+    Stores multiple values in one variable.\\ \pause
+    \begin{itemize}
+        \item Immutable
+        \item Ordered
+        \item Can contain multiple data types
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Tuples - Examples}
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        >>> my_tuple = (1, 2, 3)
+        >>> print(my_tuple)
+        (1, 2, 3)
+        >>> print(my_tuple[0])
+        1
+        >>> print(my_tuple[1])
+        2
+        >>> print(my_tuple[2])
+        3
+    \end{lstlisting}
+    Stuff like \textbf{len()} and \textbf{for} works as expected.
+\end{frame}
+
+\begin{frame}{Return types}
+    \textbf{What is returned by the function?}\\ \pause
+    \begin{itemize}
+        \item In python you are not forced to reveal that.\\ \pause
+    \end{itemize}
+    \textbf{Why? }\\ \pause
+    \begin{itemize}
+        \item Python is a so called dynamically typed language.\\ \pause
+        \item You also don't have to specify the type of the arguments.\\ \pause
+    \end{itemize}
+    \textbf{Should I do it anyway?}\\ \pause
+    \begin{itemize}
+        \item There is a reason why Python has this built in functionality.\\ \pause
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Type definition}
+    \textbf{Defining the return type:}\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        def fibbonacci(number) -> int:
+            a = 0
+            ...
+                b = a + b
+            return a
+    \end{lstlisting} \pause
+    \textbf{Defining the argument type:}\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        def fibbonacci(number: int):
+            a = 0
+            ...
+                b = a + b
+            return a
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Type definition}
+    \textbf{I don't know the type:}\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        print(type(something))
+    \end{lstlisting}
+    \pause
+    \textbf{For more complex returns you can use the typing module:}\\ \pause
+    \begin{itemize}
+        \item You can use \textbf{typing.Any} to indicate that you don't know the type.\\ \pause
+        \item You can use \textbf{typing.Union} to indicate that you don't know the type but it is one of the types you specified.\\ \pause
+        \item You can use \textbf{typing.Optional} to indicate that the type is one of the types you specified or \textbf{None}.\\ \pause
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Now we know how to write and use functions.\\ \pause
+    Let's start using code from other people.
+\end{frame}
+
+\section{Libraries}
+
+\begin{frame}{Libraries}
+    Many libraries solve a lot of problems.\\ \pause
+    \begin{itemize}
+        \item \textbf{math} - Math functions
+        \item \textbf{secrets} - strong random numbers
+        \item \textbf{numpy} - fast/complex math
+        \item \textbf{matplotlib} - plotting
+        \item \textbf{pandas} - data analysis
+        \item \textbf{tensor-flow} - machine learning
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Libraries}
+    To use a library you have to import it.\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        import math
+    \end{lstlisting}
+    \pause
+    Now you can use the functions from the library.\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        print(math.sqrt(4))
+        2.0
+    \end{lstlisting}
+    Sometimes you only want to import a single function.\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        from math import sqrt
+        print(sqrt(4))
+        2.0
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Documentation}
+    In general you can find the documentation of a library on the internet.\\ \pause
+    \begin{itemize}
+        \item \textbf{math} - \href{https://docs.python.org/3/library/math.html}{https://docs.python.org/3/library/math.html}
+        \item \textbf{tensor-flow} - \href{https://www.tensorflow.org/api\_docs/python/tf}{https://www.tensorflow.org/api\_docs/python/tf}
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Libraries}
+    \begin{alertblock}{pip}
+
+    \end{alertblock}
+    Some libraries are not installed by default.\\
+    You have to install them first.\\ \pause    
+    But we will talk about that next week.
+\end{frame}
+
+\section{Next week:\\
+ More data types and a bigger task}
+
+\end{document}
