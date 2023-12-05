@@ -1,0 +1,12 @@
+\frametitle{Dictonary}
+Dictonaries are a bit more complex.\\\pause
+    They are a collection of key-value pairs.\\\pause
+    They are mutable.\\\pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        my_dict = {1:2, "three":4}
+        my_dict[1] = 5
+        my_dict["three"] = 6
+        my_dict.pop(1)
+        my_dict.popitem()
+        my_dict.clear()
+    \end{lstlisting}
