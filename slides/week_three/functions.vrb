@@ -1,0 +1,17 @@
+\frametitle{Libraries}
+To use a library you have to import it.\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        import math
+    \end{lstlisting}
+    \pause
+    Now you can use the functions from the library.\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        print(math.sqrt(4))
+        2.0
+    \end{lstlisting}
+    Sometimes you only want to import a single function.\\ \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        from math import sqrt
+        print(sqrt(4))
+        2.0
+    \end{lstlisting}
