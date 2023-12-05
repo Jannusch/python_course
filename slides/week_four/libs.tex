@@ -1,0 +1,160 @@
+\documentclass{beamer}
+\usetheme{metropolis}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{Data Types \& Libraries}
+\author{Jannusch Bigge}
+\date{21.11.2023}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Libraries}
+
+\begin{frame}{Libraries}
+    Libraries are collections of functions.\\
+    They are not all included in Python by default.\\
+    \pause
+    $\rightarrow$ We have to install them.\\
+\end{frame}
+
+\begin{frame}[fragile]{Libraries - Background}
+    \textbf{Python} as the interpreter needs to know were to find the code.\\
+    \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=bash]
+        echo $PATH
+        whereis python3
+        python3 -v
+        ls /usr/lib/python3.11/
+    \end{lstlisting}
+    \pause
+    $\rightarrow$ installing by hand is not a good idea.\\
+    \pause
+    $\rightarrow$ installing in general not the best idea.
+\end{frame}
+
+\begin{frame}{Virtual env}
+    Python module that creates "fake environments"\\
+    \begin{itemize}
+        \item Isolated from the rest of the system
+        \item Can be deleted without any problems
+        \item Can be shared with others
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}[fragile]{Virtual env - activating}
+    First we have to create a virtual environment. In this case called venv.\\
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=bash]
+        python3 -m venv venv
+    \end{lstlisting}
+    Next we have to activate it.\\
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=bash]
+        source venv/bin/activate
+    \end{lstlisting}
+    Now we can do our python stuff.\\
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=bash]
+        ...
+    \end{lstlisting}
+    And finally if we are done we can deactivate it.\\
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=bash]
+        deactivate
+    \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]{pip}
+    To install a python library we can use pip.\\
+    \pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=bash]
+        pip install numpy
+    \end{lstlisting}
+\end{frame}
+
+
+\section{Data Types}
+
+\begin{frame}{Data Types}
+    Python has built in data types which allow us to store data.\\
+
+    \begin{itemize}
+        \item list $\rightarrow$ [1,2,3]
+        \item tuple $\rightarrow$ (1,2,3)
+        \item dict $\rightarrow$ \{1:2, 3:4\}
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}[fragile]{List}
+    Lists are the most common data type.\\\pause
+    In contrast to tuples they are mutable.\\\pause
+    Lists have a lot of helpful functions:\\
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        my_list = [1,2,3]
+        my_list.append(4)
+        my_list[0] = 5
+        my_list.remove(2)
+        my_list.pop(0)
+        my_list.insert(0, 1)
+        my_list.sort()
+        my_list.reverse()
+    \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]{Dictonary}
+    Dictonaries are a bit more complex.\\\pause
+    They are a collection of key-value pairs.\\\pause
+    They are mutable.\\\pause
+    \begin{lstlisting}[backgroundcolor = \color{lightgray},language=Python]
+        my_dict = {1:2, "three":4}
+        my_dict[1] = 5
+        my_dict["three"] = 6
+        my_dict.pop(1)
+        my_dict.popitem()
+        my_dict.clear()
+    \end{lstlisting}
+\end{frame}
+
+\section{Task}
+
+\begin{frame}{Task - Advent of Code}
+    Excellent way to practice your coding skills.\\
+    \begin{itemize}
+        \item Advent of Code is a yearly event
+        \item 25 days of coding
+        \item 2 problems per day
+        \item 50 stars to collect
+    \end{itemize}
+    \begin{center}
+        \url{https://adventofcode.com/}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Task - Advent of Code}
+    \begin{alertblock}{The goal is:} \pause
+        \begin{itemize}
+            \item Understand the problem\pause
+            \item Understand how to solve it with programming\pause
+            \item Work with others together
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}{Task - Advent of Code}
+    \begin{itemize}
+        \item Solve the first two problems of day 1 (2021)
+        \item There is a test function in the repository.
+        \item You have two data files. One for the test and one for the real problem.
+        \item You can use any library you want.
+        \item Solve the task in groups of two or three.
+    \end{itemize}
+\end{frame}
+
+
+\end{document}
+
