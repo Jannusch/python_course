@@ -207,7 +207,7 @@ car2 = SportCar("blue", True)
     \end{frame}
 
 
-\section{List Comprehension}
+\section{Stuff with lists}
 
 \begin{frame}{List Comprehensions}
     \begin{itemize}
@@ -234,7 +234,50 @@ car2 = SportCar("blue", True)
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}{A little bit of numpy}
+    For the second task we use \textbf{numpy}.\\
+    Numpy is a package for scientific computing.\\\pause
+    It adds a lot of handy functions that are not in core python.\\\pause
+    \begin{itemize}
+        \item Arrays
+        \item random values with different distributions
+        \item linear algebra
+        \item and much more (in more detail next week)
+    \end{itemize}
+    Today we use it to create random numbers.
+\end{frame}
+
+\begin{frame}[fragile]{And a little bit of scipy}
+    We also use \textbf{scipy}.\\
+    Scipy is a package for scientific computing.\\\pause
+    We use one special functino from scipy.\\\pause
+    \begin{lstlisting}[language=Python, backgroundcolor = \color{lightgray}]
+        from scipy.special import expit
+        expit(w1_t*x+w0_t)
+    \end{lstlisting}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/sigmoid.png}
+    \end{center}
+\end{frame}
+    
+
 \section{Task}
+
+\begin{frame}{frame}
+    Two tasks:\pause
+    \begin{itemize}
+        \item We have different cars
+        \item We want to know which car is the fastest
+        \item Create tha cars with oop
+        \item Calculate the speed and plot things
+    \end{itemize}
+    Second Task:
+    \begin{itemize}
+        \item We start to implement a perceptron
+        \item We use a jupyter notebook
+        \item We use numpy and scipy
+    \end{itemize}
+\end{frame}
 
 
 \end{document}
